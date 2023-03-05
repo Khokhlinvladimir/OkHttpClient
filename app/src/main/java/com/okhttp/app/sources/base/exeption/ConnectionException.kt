@@ -1,3 +1,5 @@
 package com.okhttp.app.sources.base.exeption
 
-class ConnectionException(cause: Throwable) : AppException(cause = cause)
+import javax.inject.Inject
+
+class ConnectionException @Inject constructor(cause: Throwable) : AppException(cause = cause)

@@ -2,6 +2,6 @@ package com.okhttp.app.sources.base.exeption
 
 import javax.inject.Inject
 
-class ParseBackendResponseException @Inject constructor(
-    cause: Throwable
+class InvalidCredentialsException @Inject constructor(
+    cause: Exception
 ) : AppException(cause = cause)

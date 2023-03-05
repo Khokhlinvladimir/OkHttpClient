@@ -1,6 +1,8 @@
 package com.okhttp.app.sources.base.exeption
 
-open class BackendException(
+import javax.inject.Inject
+
+open class BackendException @Inject constructor(
     val code: Int,
     message: String
 ) : AppException(message)
