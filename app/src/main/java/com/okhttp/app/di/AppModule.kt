@@ -2,6 +2,8 @@ package com.okhttp.app.di
 
 import com.okhttp.app.data.network.DataSource
 import com.okhttp.app.data.network.OkHttpDataSource
+import com.okhttp.app.domain.CitiesApi
+import com.okhttp.app.domain.PopulationCalculate
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,5 +18,9 @@ abstract class AppModule {
         okHttpDataSource: OkHttpDataSource
     ): DataSource
 
+    @Binds
+    abstract fun bindsCitiesApi(
+        populationCalculate: PopulationCalculate
+    ): CitiesApi
 
 }

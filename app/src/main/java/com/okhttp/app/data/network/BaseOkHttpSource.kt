@@ -1,6 +1,5 @@
 package com.okhttp.app.data.network
 
-import android.util.Log
 import com.google.gson.Gson
 import com.okhttp.app.data.Const
 import com.okhttp.app.data.network.exeption.BackendException
