@@ -13,7 +13,7 @@ import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
 
-class Repository@Inject constructor(private val dataSource: OkHttpDataSource): CitiesApi {
+class Repository@Inject constructor(private val dataSource: DataSource): CitiesApi {
 
 
     suspend fun data(endpoint: String): List<Data> {
