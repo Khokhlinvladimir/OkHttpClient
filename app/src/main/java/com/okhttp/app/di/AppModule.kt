@@ -1,7 +1,7 @@
 package com.okhttp.app.di
 
-import com.okhttp.app.sources.base.DataSource
-import com.okhttp.app.sources.base.OkHttpDataSource
+import com.okhttp.app.data.network.DataSource
+import com.okhttp.app.data.network.OkHttpDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

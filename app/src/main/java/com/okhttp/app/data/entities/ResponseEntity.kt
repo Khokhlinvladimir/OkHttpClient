@@ -1,4 +1,4 @@
-package com.okhttp.app.sources.entities
+package com.okhttp.app.data.entities
 
 import javax.inject.Inject
 

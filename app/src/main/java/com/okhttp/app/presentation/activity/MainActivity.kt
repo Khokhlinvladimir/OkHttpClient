@@ -1,11 +1,10 @@
-package com.okhttp.app.app
+package com.okhttp.app.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.viewModelScope
-import com.okhttp.app.R
 import com.okhttp.app.databinding.ActivityMainBinding
+import com.okhttp.app.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,7 +18,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
 
-      viewModel.data.observe(this){
+
+
+
+
+      viewModel.dataHighPopulation.observe(this){
+        binding.textView.text = "Hello from viewModel"
+      }
+        viewModel.dataLowPopulation.observe(this){
         binding.textView.text = "Hello from viewModel"
       }
 

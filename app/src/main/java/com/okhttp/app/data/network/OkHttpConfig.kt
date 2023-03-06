@@ -1,4 +1,4 @@
-package com.okhttp.app.sources.base
+package com.okhttp.app.data.network
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient

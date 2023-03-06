@@ -1,4 +1,4 @@
-package com.okhttp.app.sources.base.exeption
+package com.okhttp.app.data.network.exeption
 
 open class AppException : RuntimeException {
     constructor() : super()
