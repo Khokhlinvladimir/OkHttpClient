@@ -1,5 +1,6 @@
 package com.okhttp.app.data.network
 
+import android.util.Log
 import com.google.gson.Gson
 import com.okhttp.app.data.Const
 import com.okhttp.app.data.network.exeption.BackendException
@@ -48,6 +49,8 @@ open class BaseOkHttpSource @Inject constructor(
                     if (response.isSuccessful) {
 
                         continuation.resume(response)
+
+
                     } else {
                         handleErrorResponse(response, continuation)
                     }

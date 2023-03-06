@@ -2,6 +2,7 @@ package com.okhttp.app.presentation.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import com.okhttp.app.databinding.ActivityMainBinding
 import com.okhttp.app.presentation.viewmodel.MainViewModel
@@ -18,18 +19,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
 
-
-
-
-
       viewModel.dataHighPopulation.observe(this){
-        binding.textView.text = "Hello from viewModel"
+        binding.highPopulation.text = it.toString()
       }
         viewModel.dataLowPopulation.observe(this){
-        binding.textView.text = "Hello from viewModel"
+        binding.lowPopulation.text = it.toString()
       }
 
-
+      binding.button.setOnClickListener {
+            viewModel.getPopulation("")
+        }
 
     }
 }
