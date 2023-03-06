@@ -8,6 +8,7 @@ import com.okhttp.app.data.Repository
 import com.okhttp.app.data.entities.Data
 import com.okhttp.app.domain.CitiesApi
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -21,7 +22,11 @@ class MainViewModel @Inject constructor(private val repository: Repository, priv
     val dataLowPopulation: LiveData<List<String>> get() = _dataLowPopulation
     private lateinit var data: List<Data>
 
-     fun getPopulation(endpoint: String) = viewModelScope.launch(Dispatchers.Main) {
+    private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
+        throwable.printStackTrace()
+    }
+
+     fun getPopulation(endpoint: String) = viewModelScope.launch(Dispatchers.Main + coroutineExceptionHandler) {
         data = repository.data(endpoint)
         _dataHighPopulation.value = population.getCitiesHighPopulation(data)
         _dataLowPopulation.value = population.getCitiesLowPopulation(data)
